@@ -2,7 +2,9 @@ from multicorn.utils import log_to_postgres, ERROR, WARNING, DEBUG
 from neo4j import GraphDatabase, basic_auth, CypherError
 import json
 import ast
-
+if sys.version_info.major == 3:
+    unicode = str
+    
 """
 Neo4j Postgres function
 """
