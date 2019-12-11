@@ -8,6 +8,9 @@ from multicorn import ForeignDataWrapper, Qual, ANY, ALL
 from multicorn.utils import log_to_postgres, ERROR, WARNING, DEBUG, INFO
 from neo4j import GraphDatabase, basic_auth, CypherError
 
+if sys.version_info.major == 3:
+    unicode = str
+    
 class Neo4jForeignDataWrapper(ForeignDataWrapper):
     """
     Neo4j FWD for Postgresql
